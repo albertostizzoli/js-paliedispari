@@ -1,22 +1,21 @@
-let item = '';
-let arr =[];
+const btn = document.querySelector('button');
 
-while (item !== 'stop'){
-    item = prompt('Inserisci una parola');
+reverseWord();
+
+btn.addEventListener('click', function () {
+    const parola = document.getElementById('data').value;
+    console.log(parola);
+    let palindroma = reverseWord(parola).toLocaleLowerCase() === parola.toLocaleLowerCase();
+    console.log(palindroma);
+});
 
 
-    if(item !== 'stop' && item !== ''){
-        console.log(item);
-        arr.push(item);
+function reverseWord(word) {
+    let reversedWord = '';
+    for (let i = word.length -1; i >= 0; i--){
+        console.log(word[i]);
+        reversedWord += word[i];
+        console.log(reversedWord);
     }
-}
-
-console.log(arr);
-
-const wordEl = document.getElementById("word");
-for(let i = arr.length -1; i >= 0; i--){
-    const arrItemEl = document.createElement("p");
-    listItemEl.innerHTML = arr[i];
-    wordEl.appendChild(arrItemEl);
-
+    return reversedWord;
 }

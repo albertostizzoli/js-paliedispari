@@ -52,3 +52,4 @@ function resetForm(){
     resultEl.classList.remove('.alert-danger');
     resultEl.classList.add('.d-none');
 }
+
